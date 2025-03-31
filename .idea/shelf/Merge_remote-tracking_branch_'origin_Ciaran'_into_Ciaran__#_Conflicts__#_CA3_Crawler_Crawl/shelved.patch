@@ -1,0 +1,19 @@
+Index: CA3/Crawler/Crawler.cpp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#include \"Crawler.h\"\r\n#include <vector>\r\n#include <sstream>\r\n#include <list>\r\n\r\nusing namespace std;\r\n\r\n//Struct for position\r\nstruct Position\r\n{\r\n  int x;\r\n  int y;\r\n};\r\n\r\n//Enum for direction\r\nenum Direction{\r\n  north,\r\n  east,\r\n  south,\r\n  west\r\n};\r\n\r\n//Class representing a bug/Crawler\r\nclass crawler {\r\n  private:\r\n    int id;\r\n    Position pos;\r\n    Direction dir;\r\n    int size;\r\n    bool alive;\r\n\r\n//moves Crawler 1 space in the direction it's facing\r\nvoid move()\r\n{\r\n  bool blocked=wayIsBlocked(); //calls blocked function\r\n\r\n  if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction. praying this doesnt infinitely call itself\r\n    {\r\n      dir = Direction(rand()%3);\r\n      move();\r\n    }\r\n\r\n  if(dir==north)\r\n    {\r\n      pos.y+=1;\r\n    }\r\n\r\n  else if(dir==east)\r\n    {\r\n      pos.x+=1;\r\n    }\r\n\r\n    else if(dir==west)\r\n    {\r\n      pos.x-=1;\r\n    }\r\n\r\n    else\r\n    {\r\n      pos.y-=1;\r\n    }\r\n}//end of move()\r\n\r\n\r\n//since the grid is 10x10 0-9 it should hopefully check the direction, and if its on the edge (0 or 9) its blocked\r\n//haven't tested yet, so might not even work\r\nbool wayIsBlocked()\r\n{\r\n  bool isblocked=false; //should stay and return false if no blocks\r\n\r\n  if(dir==north && pos.y>=9)\r\n    {\r\n      isblocked=true;\r\n    }\r\n\r\n  else if(dir==east && pos.x>=9)\r\n    {\r\n      isblocked=true;\r\n    }\r\n\r\n  else if(dir==west && pos.x<=0)\r\n    {\r\n      isblocked=true;\r\n    }\r\n\r\n  else if(dir==south && pos.y<=0)\r\n    {\r\n      isblocked=true;\r\n    }\r\n\r\n  return isblocked;\r\n}//end of wayIsBlocked()\r\n\r\n};//end of crawler class\r\n\r\n\r\n//List for paths taken by the bug\r\nlist <Position> path;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CA3/Crawler/Crawler.cpp b/CA3/Crawler/Crawler.cpp
+--- a/CA3/Crawler/Crawler.cpp	(revision 6394138498a2a60d4bb27a48f364abe68ef430e2)
++++ b/CA3/Crawler/Crawler.cpp	(date 1743456897779)
+@@ -36,7 +36,7 @@
+ 
+   if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction. praying this doesnt infinitely call itself
+     {
+-      dir = Direction(rand()%3);
++      dir = Direction(rand()%3); //not 100% if this is right so if it doesnt work at some point, this might be why
+       move();
+     }
+ 

@@ -1,5 +1,7 @@
 #include "Crawler.h"
 #include <vector>
+#include <sstream>
+#include <list>
 
 using namespace std;
 
@@ -33,12 +35,14 @@ class Crawler {
     Direction dir;
     int size;
     bool alive;
-    //This keeps track of the crawlers path
-    std::vector<Crawler*> crawlers;
 
-  public:
-    Crawler(int id, Position pos, Direction dir, int size)
-        : id(id), pos(pos), dir(dir), size(size), alive(true) {
-      crawlers.push_back(this);
-        }
+    }
+
+//List for paths taken by the bug
+List <Position> path;
+
+
+
+
+
 

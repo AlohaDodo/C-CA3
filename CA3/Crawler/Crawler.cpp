@@ -21,8 +21,8 @@ enum Direction{
 };
 
 //Class representing a bug/Crawler
-class crawler {
-  private:
+class Crawler {
+  public:
     int id;
     Position pos;
     Direction dir;
@@ -59,7 +59,7 @@ void move()
     {
       pos.y-=1;
     }
-}//end of move()
+}//end of move(), in crawler
 
 
 //since the grid is 10x10 0-9 it should hopefully check the direction, and if its on the edge (0 or 9) its blocked
@@ -89,9 +89,9 @@ bool wayIsBlocked()
     }
 
   return isblocked;
-}//end of wayIsBlocked()
+}//end of wayIsBlocked(), in crawler
 
-};//end of crawler class
+};//end of Crawler class
 
 
 //List for paths taken by the bug

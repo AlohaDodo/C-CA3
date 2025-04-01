@@ -1,7 +1,7 @@
 #ifndef CRAWLER_H
 #define CRAWLER_H
 
-class Crawler {
+class crawler {
 Crawler();
 
 };

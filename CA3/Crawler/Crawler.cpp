@@ -5,38 +5,14 @@
 
 using namespace std;
 
-//Struct for position
-struct Position
-{
-  int x;
-  int y;
-};
-
-//Enum for direction
-enum Direction{
-  north,
-  east,
-  south,
-  west
-};
-
-//Class representing a bug/Crawler
-class Crawler {
-  public:
-    int id;
-    Position pos;
-    Direction dir;
-    int size;
-    bool alive;
-
 //moves Crawler 1 space in the direction it's facing
-void move()
+void Crawler::move()
 {
   bool blocked=wayIsBlocked(); //calls blocked function
 
   if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction. praying this doesnt infinitely call itself
     {
-      dir = Direction(rand()%3);
+      dir = Direction(rand()%4);
       move();
     }
 
@@ -64,7 +40,7 @@ void move()
 
 //since the grid is 10x10 0-9 it should hopefully check the direction, and if its on the edge (0 or 9) its blocked
 //haven't tested yet, so might not even work
-bool wayIsBlocked()
+bool Crawler::wayIsBlocked()
 {
   bool isblocked=false; //should stay and return false if no blocks
 
@@ -90,8 +66,7 @@ bool wayIsBlocked()
 
   return isblocked;
 }//end of wayIsBlocked(), in crawler
-
-};//end of Crawler class
+;//end of Crawler class
 
 
 //List for paths taken by the bug

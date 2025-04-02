@@ -1,7 +1,8 @@
 #include "Board.h"
-#include "Crawler.cpp" //help. i think i messed up and this is supposed to call .h but everythings in cpp idkk.
+#include "C:\Users\Ciarán\CLionProjects\C-CA3\CA3\Crawler\Crawler.h"
 #include <vector>
 #include <fstream>
+#include <iostream>
 #include <sstream>
 
 using namespace std;
@@ -10,38 +11,47 @@ using namespace std;
 vector<Crawler*> crawlers;
 
 //function signings
-void setUpCrawlers(vector<Crawler*>crawlers);
+void setUpCrawlers(ifstream &ifs,vector<Crawler*> &crawlers);
+void displayCrawlers(vector<Crawler*> &crawlers);
 //
 
 int main() {
 
-  setUpCrawlers(crawlers);
+    ifstream ifs("crawler-bugs.txt");
+
+    if (ifs)
+    {
+        setUpCrawlers(ifs,crawlers);
+    }
+
+    else {
+        cout<<"unable to open file";
+    }
 
     return 0;
 }
 
-void setUpCrawlers(vector<Crawler*> crawlers) {
+void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
 
-    ifstream ifs("crawler-bugs.txt");
     string line;
 
     while (getline(ifs, line))
     {
         stringstream ss(line);
 
-        Crawler* crawlers = new Crawler();
+        Crawler* created_crawler = new Crawler();
 
         //ignores the "c" for now,
         ss.ignore();
         ss.ignore();
         //
 
-        ss>>crawlers->id;
+        ss>>created_crawler->id;
         ss.ignore();
 
-        ss>>crawlers->pos.x;
+        ss>>created_crawler->pos.x;
         ss.ignore();
-        ss>>crawlers->pos.y;
+        ss>>created_crawler->pos.y;
         ss.ignore();
 
         //ignores the direction for now, idk how to read ts in as a number rn
@@ -49,10 +59,23 @@ void setUpCrawlers(vector<Crawler*> crawlers) {
         ss.ignore();
         //
 
-        ss>>crawlers->size;
+        ss>>created_crawler->size;
         ss.ignore();
 
-        ss>>crawlers->alive;
+        ss>>created_crawler->alive;
 
+        crawlers.push_back(created_crawler);
+    }//end of while
+}//end of setUpCrawlers
+
+void displayCrawlers(vector<Crawler*> &crawlers)
+{
+    for (auto iter = begin(crawlers)+1; iter != end(crawlers); iter++)
+    {
+        Crawler* crawler = *iter;
+
+        cout <<"crawler ID: " << crawler->id << endl;
+        cout <<"crawler position x: " << crawler->pos.x << endl;
+        cout <<"crawler position y: " << crawler->pos.y << endl;
     }
 }

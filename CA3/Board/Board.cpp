@@ -22,6 +22,7 @@ int main() {
     if (ifs)
     {
         setUpCrawlers(ifs,crawlers);
+        displayCrawlers(crawlers);
     }
 
     else {
@@ -70,7 +71,7 @@ void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
 
 void displayCrawlers(vector<Crawler*> &crawlers)
 {
-    for (auto iter = begin(crawlers)+1; iter != end(crawlers); iter++)
+    for (auto iter = begin(crawlers); iter != end(crawlers); iter++)
     {
         Crawler* crawler = *iter;
 

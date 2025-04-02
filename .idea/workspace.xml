@@ -18,7 +18,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="updated move() function to set a random direction if it's blocked" />
+    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="updated move() function to set a random direction if it's blocked">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Board/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Board/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Crawler/Crawler.h" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler/Crawler.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,11 +53,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/Ciarán/CLionProjects/C-CA3/CA3/Crawler/Crawler.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ciarán/CLionProjects/C-CA3/CA3/Crawler/Crawler.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ciarán/CLionProjects/C-CA3/CA3/Crawler/Crawler.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ciarán/CLionProjects/C-CA3/CA3/Crawler/Crawler.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ciarán/CLionProjects/C-CA3/CA3/Crawler/Crawler.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CA3/Board/Board.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -63,24 +63,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ File.Board.cpp.executor": "Run",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Board.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$/CA3" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C-CA3" TARGET_NAME="Board.cpp" CONFIG_NAME="Board.cpp">
+      <option name="sourceFile" value="CA3\Board\Board.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="C/C++ File.Board.cpp" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,6 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1743445529601</updated>
       <workItem from="1743445530763" duration="9421000" />
+      <workItem from="1743632927581" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="added basic move() function, no check for way blocked">
       <option name="closed" value="true" />
@@ -142,8 +158,8 @@
     <MESSAGE value="added wayIsBlocked function in crawler class" />
     <MESSAGE value="updated the move() function to set a random direction if it's blocked." />
     <MESSAGE value="Merge remote-tracking branch 'origin/Ciaran' into Ciaran&#10;&#10;# Conflicts:&#10;#&#9;CA3/Crawler/Crawler.cpp" />
-    <MESSAGE value="updated move() function to set a random direction if it's blocked" />
     <MESSAGE value="," />
-    <option name="LAST_COMMIT_MESSAGE" value="," />
+    <MESSAGE value="updated move() function to set a random direction if it's blocked" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated move() function to set a random direction if it's blocked" />
   </component>
 </project>

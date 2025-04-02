@@ -17,7 +17,7 @@ enum Direction{
   };
 
 //Class representing a bug/Crawler
-class Crawler {
+class Crawler{
 
 public:
     int id;

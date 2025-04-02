@@ -78,5 +78,8 @@ void displayCrawlers(vector<Crawler*> &crawlers)
         cout <<"crawler ID: " << crawler->id << endl;
         cout <<"crawler position x: " << crawler->pos.x << endl;
         cout <<"crawler position y: " << crawler->pos.y << endl;
+        cout <<"crawler size: " << crawler->size << endl;
+        cout<<endl;
+
     }
 }

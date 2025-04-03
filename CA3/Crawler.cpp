@@ -3,6 +3,7 @@
 #include <sstream>
 #include <list>
 
+
 using namespace std;
 
 //getters and setters
@@ -37,7 +38,6 @@ void Crawler::setDirection(int dir) {
 Crawler::Crawler() {
 }
 
-
 //moves Crawler 1 space in the direction it's facing
 void Crawler::move()
 {
@@ -46,6 +46,10 @@ void Crawler::move()
   if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction.
   {
     int n = rand()%3;
+
+
+    //Adding the position to the history before moving off
+    addPathToHistory();
 
     if (n==0)
     {
@@ -58,6 +62,17 @@ void Crawler::move()
     }
 
     else if (n==2)
+
+    {
+      dir = south;
+    }
+
+    else
+    {
+      dir = west;
+    }
+
+
     {
       dir = south;
     }
@@ -91,6 +106,11 @@ void Crawler::move()
       pos.y-=1;
     }
 }//end of move(), in crawler
+
+
+void Crawler::addPathToHistory() {
+  path.push_back(pos);
+}
 
 
 //since the grid is 10x10 0-9 it should hopefully check the direction, and if its on the edge (0 or 9) its blocked

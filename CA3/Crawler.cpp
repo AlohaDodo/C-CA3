@@ -5,6 +5,39 @@
 
 using namespace std;
 
+//getters and setters
+int Crawler::getId() {
+  return id;
+}
+
+int Crawler::getSize() {
+  return size;
+}
+
+bool Crawler::getAlive() {
+  return alive;
+}
+
+void Crawler::setId(int id) {
+ 	 this->id = id;
+}
+
+void Crawler::setSize(int size) {
+	 this->size = size;
+}
+
+int Crawler::getDirection() {
+  return dir;
+}
+
+void Crawler::setDirection(int dir) {
+	 this->dir = static_cast<Direction>(dir);
+}
+
+Crawler::Crawler() {
+}
+
+
 //moves Crawler 1 space in the direction it's facing
 void Crawler::move()
 {
@@ -69,5 +102,5 @@ bool Crawler::wayIsBlocked()
 ;//end of Crawler class
 
 
-//List for paths taken by the bug
-list <Position> path;
+
+

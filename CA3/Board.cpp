@@ -1,4 +1,7 @@
 #include "Board.h"
+
+#include <array>
+
 #include "Crawler.h"
 #include <vector>
 #include <fstream>
@@ -7,12 +10,15 @@
 
 using namespace std;
 
+array<array<vector<Crawler*>, 10>, 10> board; //sets up the board cells
+
 //function signings
 void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers);
 void displayCrawlers(vector<Crawler*> &crawlers);
 void displayOneCrawler(vector<Crawler*> &crawlers);
 Crawler* findBugById(vector<Crawler*> &crawlers, string bugId);
 void tapBoard(vector<Crawler*> &crawlers);
+void displayCells(vector<Crawler*> &crawlers,array<array<vector<Crawler*>, 10>, 10> &board);
 
 //Set up crawlers - assign values from the file to variables
 void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
@@ -51,8 +57,11 @@ void displayCrawlers(vector<Crawler*> &crawlers)
         cout <<"crawler position x: " << crawler->pos.x << endl;
         cout <<"crawler position y: " << crawler->pos.y << endl;
         cout <<"crawler size: " << crawler->getSize() << endl;
+        cout <<"crawler is facing: " << crawler->getDirection() << endl;
+        cout <<"crawler is alive: " << crawler->getAlive() << endl;
         cout<<endl;
 
+        board[crawler->pos.x][crawler->pos.y].push_back(crawler); //adds crawler positions to the board cells
     }
 }
 
@@ -83,6 +92,24 @@ void tapBoard(vector<Crawler*> &crawlers)
         cout <<"new crawler position x: " << crawler->pos.x << endl;
         cout <<"new crawler position y: " << crawler->pos.y << endl;
         cout <<"crawler size: " << crawler->getSize() << endl;
+        cout <<"crawler is facing: " << crawler->getDirection() << endl;
+        cout <<"crawler is alive: " << crawler->getAlive() << endl;
+
         cout<<endl;
+    }
+
+}
+
+void displayCells(vector<Crawler*> &crawlers,array<array<vector<Crawler*>, 10>, 10> &board)
+{
+    for ( auto row = 0; row < 10; row++)
+    {
+        for ( auto col = 0; col < 10; col++)
+        {
+            for ( auto crawlers : board[row][col] ) {
+                crawlers->getId();
+            }
+
+        }
     }
 }

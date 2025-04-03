@@ -10,12 +10,34 @@ void Crawler::move()
 {
   bool blocked=wayIsBlocked(); //calls blocked function
 
-  if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction. praying this doesnt infinitely call itself
+  if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction.
     {
-      dir = Direction(rand()%4);
+     int n = rand()%3;
+
+     if (n==0)
+       {
+       dir = north;
+       }
+
+    else if (n==1)
+    {
+      dir = east;
+    }
+
+    else if (n==2)
+      {
+      dir = south;
+      }
+
+    else
+      {
+      dir = west;
+      }
+
       move();
     }
 
+  else
   if(dir==north)
     {
       pos.y+=1;
@@ -67,7 +89,6 @@ bool Crawler::wayIsBlocked()
   return isblocked;
 }//end of wayIsBlocked(), in crawler
 ;//end of Crawler class
-
 
 //List for paths taken by the bug
 list <Position> path;

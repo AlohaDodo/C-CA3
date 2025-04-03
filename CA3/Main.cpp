@@ -7,7 +7,6 @@
 int main() {
 
     ifstream ifs("crawler-bugs.txt");
-
     //Setting up the menu
     cout << "Select option:" << endl;
     cout << "1. Bug board" << endl;
@@ -27,6 +26,7 @@ int main() {
         case 2: displayCrawlers(crawlers);
         //Find bug by id
         //Tap the bug board
+        case 4: tapBoard(crawlers);
         //Display life history
         //Display all cells
         //Run simulation
@@ -37,9 +37,11 @@ int main() {
     {
         setUpCrawlers(ifs,crawlers);
         displayCrawlers(crawlers);
+        tapBoard(crawlers);
     }
 
-    else {
+    else
+    {
         cout<<"unable to open file";
     }
 

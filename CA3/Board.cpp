@@ -13,9 +13,8 @@ vector<Crawler*> crawlers;
 //function signings
 void setUpCrawlers(ifstream &ifs,vector<Crawler*> &crawlers);
 void displayCrawlers(vector<Crawler*> &crawlers);
+void tapBoard(vector<Crawler*> &crawlers);
 //
-
-
 
 void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
 
@@ -63,6 +62,22 @@ void displayCrawlers(vector<Crawler*> &crawlers)
         cout <<"crawler ID: " << crawler->id << endl;
         cout <<"crawler position x: " << crawler->pos.x << endl;
         cout <<"crawler position y: " << crawler->pos.y << endl;
+        cout <<"crawler size: " << crawler->size << endl;
+        cout<<endl;
+
+    }
+}
+
+void tapBoard(vector<Crawler*> &crawlers)
+{
+    for (auto iter = begin(crawlers); iter != end(crawlers); iter++)
+    {
+        Crawler* crawler = *iter;
+        crawler->move();
+
+        cout <<"crawler ID: " << crawler->id << endl;
+        cout <<"new crawler position x: " << crawler->pos.x << endl;
+        cout <<"new crawler position y: " << crawler->pos.y << endl;
         cout <<"crawler size: " << crawler->size << endl;
         cout<<endl;
 

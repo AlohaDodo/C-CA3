@@ -1,5 +1,5 @@
 #include "Board.h"
-#include "C:\Users\Ciarán\CLionProjects\C-CA3\CA3\Crawler\Crawler.h"
+#include "Crawler.h"
 #include <vector>
 #include <fstream>
 #include <iostream>
@@ -15,22 +15,7 @@ void setUpCrawlers(ifstream &ifs,vector<Crawler*> &crawlers);
 void displayCrawlers(vector<Crawler*> &crawlers);
 //
 
-int main() {
 
-    ifstream ifs("crawler-bugs.txt");
-
-    if (ifs)
-    {
-        setUpCrawlers(ifs,crawlers);
-        displayCrawlers(crawlers);
-    }
-
-    else {
-        cout<<"unable to open file";
-    }
-
-    return 0;
-}
 
 void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
 

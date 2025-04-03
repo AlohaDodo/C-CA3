@@ -44,8 +44,8 @@ public:
     void setId(int id);
     void setSize(int size);
     void setDirection(int dir);
-    void addPathToHistory();
-    const list<Position> getPathHistory();
+    //void addPathToHistory();
+    //const list<Position> getPathHistory();
     Position pos;
 //void move();
 //void wayIsBlocked();

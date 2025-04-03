@@ -30,5 +30,8 @@ public:
     bool wayIsBlocked();
 };
 
+void move();
+void wayIsBlocked();
+
 
 #endif //CRAWLER_H

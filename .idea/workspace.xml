@@ -7,7 +7,6 @@
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
   <component name="CMakeProjectFlavorService">
     <option name="flavorId" value="CMakePlainProjectFlavor" />
@@ -19,9 +18,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="updated move() function to set a random direction if it's blocked">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CA3/Board/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Board/Board.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CA3/Crawler/Crawler.h" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler/Crawler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Board.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Board/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Board/Board.h" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Board.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Crawler/Crawler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Crawler/Crawler.h" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Ciaran" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,12 +47,12 @@
     &quot;assignee&quot;: &quot;CiaranMcKeown123&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AlohaDodo/C-CA3.git&quot;,
-    &quot;accountId&quot;: &quot;2997bd4e-858f-46b2-9186-c1e7bcf2b47e&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AlohaDodo/C-CA3.git",
+    "accountId": "3981b1cb-5288-4140-b157-bb7a18fa5cac"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/CA3/Board/Board.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -65,6 +66,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "C/C++ File.Board.cpp (1).executor": "Run",
     "C/C++ File.Board.cpp.executor": "Run",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -73,7 +75,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Dorota2.0",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -83,15 +85,31 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dorotka\CLionProjects\C-CA3\CA3" />
+    </key>
+  </component>
+  <component name="RunManager" selected="C/C++ File.Board.cpp (1)">
+    <configuration name="Board.cpp (1)" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$USER_HOME$/Documents/GitHub/C-CA3" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C-CA3" TARGET_NAME="Board.cpp (1)" CONFIG_NAME="Board.cpp (1)">
+      <option name="sourceFile" value="CA3\Board.cpp" />
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Board.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$/CA3" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C-CA3" TARGET_NAME="Board.cpp" CONFIG_NAME="Board.cpp">
       <option name="sourceFile" value="CA3\Board\Board.cpp" />
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="C/C++ File.Board.cpp" />
+      <item itemvalue="C/C++ File.Board.cpp (1)" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="C/C++ File.Board.cpp (1)" />
         <item itemvalue="C/C++ File.Board.cpp" />
       </list>
     </recent_temporary>
@@ -106,6 +124,7 @@
       <updated>1743445529601</updated>
       <workItem from="1743445530763" duration="9421000" />
       <workItem from="1743632927581" duration="25000" />
+      <workItem from="1743671733021" duration="548000" />
     </task>
     <task id="LOCAL-00001" summary="added basic move() function, no check for way blocked">
       <option name="closed" value="true" />

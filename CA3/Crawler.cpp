@@ -3,7 +3,6 @@
 #include <sstream>
 #include <list>
 
-
 using namespace std;
 
 //getters and setters
@@ -20,11 +19,11 @@ bool Crawler::getAlive() {
 }
 
 void Crawler::setId(int id) {
- 	 this->id = id;
+  this->id = id;
 }
 
 void Crawler::setSize(int size) {
-	 this->size = size;
+  this->size = size;
 }
 
 int Crawler::getDirection() {
@@ -32,11 +31,12 @@ int Crawler::getDirection() {
 }
 
 void Crawler::setDirection(int dir) {
-	 this->dir = static_cast<Direction>(dir);
+  this->dir = static_cast<Direction>(dir);
 }
 
 Crawler::Crawler() {
 }
+
 
 //moves Crawler 1 space in the direction it's facing
 void Crawler::move()
@@ -47,9 +47,8 @@ void Crawler::move()
   {
     int n = rand()%3;
 
-
     //Adding the position to the history before moving off
-    addPathToHistory();
+    //addPathToHistory();
 
     if (n==0)
     {
@@ -62,17 +61,6 @@ void Crawler::move()
     }
 
     else if (n==2)
-
-    {
-      dir = south;
-    }
-
-    else
-    {
-      dir = west;
-    }
-
-
     {
       dir = south;
     }
@@ -108,11 +96,6 @@ void Crawler::move()
 }//end of move(), in crawler
 
 
-void Crawler::addPathToHistory() {
-  path.push_back(pos);
-}
-
-
 //since the grid is 10x10 0-9 it should hopefully check the direction, and if its on the edge (0 or 9) its blocked
 //haven't tested yet, so might not even work
 bool Crawler::wayIsBlocked()
@@ -120,24 +103,24 @@ bool Crawler::wayIsBlocked()
   bool isblocked=false; //should stay and return false if no blocks
 
   if(dir==north && pos.y>=9)
-    {
-      isblocked=true;
-    }
+  {
+    isblocked=true;
+  }
 
   else if(dir==east && pos.x>=9)
-    {
-      isblocked=true;
-    }
+  {
+    isblocked=true;
+  }
 
   else if(dir==west && pos.x<=0)
-    {
-      isblocked=true;
-    }
+  {
+    isblocked=true;
+  }
 
   else if(dir==south && pos.y<=0)
-    {
-      isblocked=true;
-    }
+  {
+    isblocked=true;
+  }
 
   return isblocked;
 }//end of wayIsBlocked(), in crawler

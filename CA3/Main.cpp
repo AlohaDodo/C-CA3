@@ -68,7 +68,7 @@ int main() {
 
             //If user wants to look at the history of the bugs
             case 4:
-            getPathHistory(crawlers);
+            //getPathHistory(crawlers);
             break;
 
             //If user wants to exit or finish the game

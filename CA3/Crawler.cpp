@@ -5,19 +5,52 @@
 
 using namespace std;
 
+//getters and setters
+int Crawler::getId() {
+  return id;
+}
+
+int Crawler::getSize() {
+  return size;
+}
+
+bool Crawler::getAlive() {
+  return alive;
+}
+
+void Crawler::setId(int id) {
+ 	 this->id = id;
+}
+
+void Crawler::setSize(int size) {
+	 this->size = size;
+}
+
+int Crawler::getDirection() {
+  return dir;
+}
+
+void Crawler::setDirection(int dir) {
+	 this->dir = static_cast<Direction>(dir);
+}
+
+Crawler::Crawler() {
+}
+
+
 //moves Crawler 1 space in the direction it's facing
 void Crawler::move()
 {
   bool blocked=wayIsBlocked(); //calls blocked function
 
   if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction.
-    {
-     int n = rand()%3;
+  {
+    int n = rand()%3;
 
-     if (n==0)
-       {
-       dir = north;
-       }
+    if (n==0)
+    {
+      dir = north;
+    }
 
     else if (n==1)
     {
@@ -25,25 +58,25 @@ void Crawler::move()
     }
 
     else if (n==2)
-      {
+    {
       dir = south;
-      }
-
-    else
-      {
-      dir = west;
-      }
-
-      move();
     }
 
+    else
+    {
+      dir = west;
+    }
+
+    move();
+  }
+
   else
-  if(dir==north)
+    if(dir==north)
     {
       pos.y+=1;
     }
 
-  else if(dir==east)
+    else if(dir==east)
     {
       pos.x+=1;
     }
@@ -88,7 +121,3 @@ bool Crawler::wayIsBlocked()
 
   return isblocked;
 }//end of wayIsBlocked(), in crawler
-;//end of Crawler class
-
-//List for paths taken by the bug
-list <Position> path;

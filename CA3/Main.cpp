@@ -1,49 +1,79 @@
-#include "Main.h"
 #include "Crawler.h"
 #include "Board.h"
 #include "Crawler.cpp"
 #include "Board.cpp"
 
 int main() {
+    vector<Crawler*> crawlers;
 
+    //Feature 1 - Initialise bug board
     ifstream ifs("crawler-bugs.txt");
-    //Setting up the menu
-    cout << "Select option:" << endl;
-    cout << "1. Bug board" << endl;
-    cout << "2. Display all bugs" << endl;
-    cout << "3. Find a bug using ID" << endl;
-    cout << "4. Tap the bug board" <<endl;
-    cout << "5. Display life history of all bugs" << endl;
-    cout << "6. Display all cells listing their bugs" << endl;
-    cout << "7. Run simulation" << endl;
-    cout << "8. Exit" << endl;
-    cout << "Option: ";
 
-    int option;
-    cin >> option;
-    switch (option) {
-        //Loading up bug board
-        case 2: displayCrawlers(crawlers);
-        //Find bug by id
-        //Tap the bug board
-        case 4: tapBoard(crawlers);
-        //Display life history
-        //Display all cells
-        //Run simulation
-        case 8 : exit(0);
+    //If file doesn't open or fails to find file (remember to fix your directory)
+    if (!ifs) {
+        cout << "Unable to open file." << endl;
+        return 1;
     }
 
-    if (ifs)
-    {
-        setUpCrawlers(ifs,crawlers);
-        displayCrawlers(crawlers);
-        tapBoard(crawlers);
-    }
+    //Getters setters etc
+    setUpCrawlers(ifs, crawlers);
 
-    else
-    {
-        cout<<"unable to open file";
-    }
+    //While loop so code doesn't break
+    while (true) {
+        //Printing out menu options
+        cout << "\nSelect option:\n"
+             << "1. Display all bugs\n"
+             << "2. Find a bug using ID\n"
+             << "3. Tap the bug board\n"
+             << "4. Display life history of all bugs\n"
+             << "5. Display all cells listing their bugs\n"
+             << "6. Run simulation\n"
+             << "7. Exit\n"
+             << "Option: ";
 
-    return 0;
+        //Inputting which option the user would chose
+        int option;
+        cin >> option;
+
+        switch (option) {
+            //If user picks to display all Crawlers
+            case 1:
+                displayCrawlers(crawlers);
+            break;
+
+            //If user picks to find bug by ID - example 101
+            case 2:
+                //User entering in an id they want to filter out with
+                cout << "Enter bug id: ";
+                int bugId;
+                cin >> bugId;
+            {
+                //declaring a variable and going to the method by bringing in the vector and id inputted by user
+                Crawler* found = findBugById(crawlers, bugId);
+                //if there was something returned in found
+                if (found) {
+                    displayOneCrawler(found);
+                }
+                //if there was nothing return in found, it gets a nullptr returned. then returns error
+                else {
+                    cout << "Bug not found!" << endl;
+                }
+            }
+            break;
+
+            //If user wants to tap the board.
+            case 3:
+                tapBoard(crawlers);
+            break;
+
+            //If user wants to exit or finish the game
+            case 8:
+                cout << "Bye bye" << endl;
+            return 0;
+            default:
+                cout << "Invalid option. Try again.\n";
+            break;
+        }
+    }
 }
+

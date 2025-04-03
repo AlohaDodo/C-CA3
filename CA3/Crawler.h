@@ -19,19 +19,27 @@ enum Direction{
 //Class representing a bug/Crawler
 class Crawler{
 
-public:
+private:
     int id;
-    Position pos;
     Direction dir;
     int size;
     bool alive;
 
+public:
+    Crawler();
     void move();
     bool wayIsBlocked();
+    int getId();
+    int getSize();
+    int getDirection();
+    bool getAlive();
+    void setId(int id);
+    void setSize(int size);
+    void setDirection(int dir);
+    Position pos;
+
+//void move();
+//void wayIsBlocked();
+
 };
-
-void move();
-void wayIsBlocked();
-
-
 #endif //CRAWLER_H

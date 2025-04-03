@@ -38,27 +38,48 @@ void Crawler::setDirection(int dir) {
 Crawler::Crawler() {
 }
 
-
 //moves Crawler 1 space in the direction it's facing
 void Crawler::move()
 {
   bool blocked=wayIsBlocked(); //calls blocked function
 
-  if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction. praying this doesnt infinitely call itself
+  if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction.
+  {
+    int n = rand()%3;
+
+    //Adding the position to the history before moving off
+    addPathToHistory();
+
+    if (n==0)
     {
-      dir = Direction(rand()%4);
-      move();
+      dir = north;
     }
 
-  //Adding the position to the history before moving off
-  addPathToHistory();
+    else if (n==1)
+    {
+      dir = east;
+    }
 
-  if(dir==north)
+    else if (n==2)
+    {
+      dir = south;
+    }
+
+    else
+    {
+      dir = west;
+    }
+
+    move();
+  }
+
+  else
+    if(dir==north)
     {
       pos.y+=1;
     }
 
-  else if(dir==east)
+    else if(dir==east)
     {
       pos.x+=1;
     }
@@ -73,6 +94,7 @@ void Crawler::move()
       pos.y-=1;
     }
 }//end of move(), in crawler
+
 
 void Crawler::addPathToHistory() {
   path.push_back(pos);

@@ -52,7 +52,6 @@ void displayCrawlers(vector<Crawler*> &crawlers)
         cout <<"crawler position y: " << crawler->pos.y << endl;
         cout <<"crawler size: " << crawler->getSize() << endl;
         cout<<endl;
-
     }
 }
 
@@ -85,4 +84,9 @@ void tapBoard(vector<Crawler*> &crawlers)
         cout <<"crawler size: " << crawler->getSize() << endl;
         cout<<endl;
     }
+}
+
+//Q5 - Display history of the bugs
+void getPathHistory(const vector<Crawler*>& crawlers) {
+
 }

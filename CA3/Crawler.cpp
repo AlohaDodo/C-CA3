@@ -3,6 +3,7 @@
 #include <sstream>
 #include <list>
 
+
 using namespace std;
 
 //getters and setters
@@ -49,6 +50,9 @@ void Crawler::move()
       move();
     }
 
+  //Adding the position to the history before moving off
+  addPathToHistory();
+
   if(dir==north)
     {
       pos.y+=1;
@@ -69,6 +73,10 @@ void Crawler::move()
       pos.y-=1;
     }
 }//end of move(), in crawler
+
+void Crawler::addPathToHistory() {
+  path.push_back(pos);
+}
 
 
 //since the grid is 10x10 0-9 it should hopefully check the direction, and if its on the edge (0 or 9) its blocked

@@ -18,7 +18,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="Attempted feature 5 - Resolved conflict" />
+    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="resolved conflict - attempted feature 5" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +131,7 @@
       <workItem from="1743445530763" duration="9421000" />
       <workItem from="1743632927581" duration="25000" />
       <workItem from="1743671733021" duration="548000" />
-      <workItem from="1743703469429" duration="9426000" />
+      <workItem from="1743703469429" duration="9759000" />
     </task>
     <task id="LOCAL-00001" summary="added basic move() function, no check for way blocked">
       <option name="closed" value="true" />
@@ -197,7 +197,23 @@
       <option name="project" value="LOCAL" />
       <updated>1743713226026</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Attempted feature 5 - Resolved conflict">
+      <option name="closed" value="true" />
+      <created>1743713606914</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743713606914</updated>
+    </task>
+    <task id="LOCAL-00010" summary="resolved conflict - attempted feature 5">
+      <option name="closed" value="true" />
+      <created>1743713920225</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1743713920225</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +229,7 @@
     <MESSAGE value="Features 1 - 4 done&#10;Commented code" />
     <MESSAGE value="Attempted feature 5" />
     <MESSAGE value="Attempted feature 5 - Resolved conflict" />
-    <option name="LAST_COMMIT_MESSAGE" value="Attempted feature 5 - Resolved conflict" />
+    <MESSAGE value="resolved conflict - attempted feature 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolved conflict - attempted feature 5" />
   </component>
 </project>

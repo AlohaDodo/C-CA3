@@ -47,6 +47,7 @@ void Crawler::move()
   {
     int n = rand()%3;
 
+
     //Adding the position to the history before moving off
     addPathToHistory();
 
@@ -61,6 +62,17 @@ void Crawler::move()
     }
 
     else if (n==2)
+
+    {
+      dir = south;
+    }
+
+    else
+    {
+      dir = west;
+    }
+
+
     {
       dir = south;
     }
@@ -129,8 +141,3 @@ bool Crawler::wayIsBlocked()
 
   return isblocked;
 }//end of wayIsBlocked(), in crawler
-;//end of Crawler class
-
-
-
-

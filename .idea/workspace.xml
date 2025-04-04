@@ -18,9 +18,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="updated move() function to set a random direction if it's blocked">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CA3/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Board.cpp" afterDir="false" />
+    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="moving bugs">
+      <change beforePath="$PROJECT_DIR$/CA3/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +33,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Ciaran" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,7 +51,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/CA3/Board.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CA3/Board.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CA3/Main.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -75,7 +74,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Ciaran",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -111,9 +110,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="C/C++ File.Main.cpp" />
-      <item itemvalue="C/C++ File.Board.cpp" />
       <item itemvalue="C/C++ File.Board.cpp (1)" />
+      <item itemvalue="C/C++ File.Board.cpp" />
+      <item itemvalue="C/C++ File.Main.cpp" />
     </list>
     <recent_temporary>
       <list>

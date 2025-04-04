@@ -19,11 +19,11 @@ bool Crawler::getAlive() {
 }
 
 void Crawler::setId(int id) {
- 	 this->id = id;
+  this->id = id;
 }
 
 void Crawler::setSize(int size) {
-	 this->size = size;
+  this->size = size;
 }
 
 int Crawler::getDirection() {
@@ -31,7 +31,7 @@ int Crawler::getDirection() {
 }
 
 void Crawler::setDirection(int dir) {
-	 this->dir = static_cast<Direction>(dir);
+  this->dir = static_cast<Direction>(dir);
 }
 
 Crawler::Crawler() {
@@ -46,6 +46,9 @@ void Crawler::move()
   if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction.
   {
     int n = rand()%3;
+
+    //Adding the position to the history before moving off
+    //addPathToHistory();
 
     if (n==0)
     {
@@ -100,24 +103,24 @@ bool Crawler::wayIsBlocked()
   bool isblocked=false; //should stay and return false if no blocks
 
   if(dir==north && pos.y>=9)
-    {
-      isblocked=true;
-    }
+  {
+    isblocked=true;
+  }
 
   else if(dir==east && pos.x>=9)
-    {
-      isblocked=true;
-    }
+  {
+    isblocked=true;
+  }
 
   else if(dir==west && pos.x<=0)
-    {
-      isblocked=true;
-    }
+  {
+    isblocked=true;
+  }
 
   else if(dir==south && pos.y<=0)
-    {
-      isblocked=true;
-    }
+  {
+    isblocked=true;
+  }
 
   return isblocked;
 }//end of wayIsBlocked(), in crawler

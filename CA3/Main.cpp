@@ -72,7 +72,7 @@ int main() {
             break;
 
             //If user wants to exit or finish the game
-            case 8:
+            case 7:
                 cout << "Bye bye" << endl;
             return 0;
             default:

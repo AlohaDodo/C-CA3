@@ -1,7 +1,6 @@
 #include "Crawler.h"
 #include <vector>
 #include <sstream>
-#include <list>
 
 using namespace std;
 
@@ -90,6 +89,9 @@ void Crawler::move()
     {
       pos.y-=1;
     }
+
+
+
 }//end of move(), in crawler
 
 

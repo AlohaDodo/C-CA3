@@ -66,6 +66,13 @@ int main() {
                 tapBoard(crawlers);
             break;
 
+            //Display cells of the board
+            case 5:
+                setUpCrawlers(ifs, crawlers); //adds the crawlers to the board before it displays
+                displayCells(board);
+            break;
+
+
             //If user wants to exit or finish the game
             case 8:
                 cout << "Bye bye" << endl;

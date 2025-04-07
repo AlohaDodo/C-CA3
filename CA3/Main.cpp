@@ -66,13 +66,8 @@ int main() {
                 tapBoard(crawlers);
             break;
 
-            //If user wants to look at the history of the bugs
-            case 4:
-            //getPathHistory(crawlers);
-            break;
-
             //If user wants to exit or finish the game
-            case 7:
+            case 8:
                 cout << "Bye bye" << endl;
             return 0;
             default:

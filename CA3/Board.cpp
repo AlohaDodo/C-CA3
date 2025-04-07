@@ -18,7 +18,7 @@ void displayCrawlers(vector<Crawler*> &crawlers);
 void displayOneCrawler(vector<Crawler*> &crawlers);
 Crawler* findBugById(vector<Crawler*> &crawlers, string bugId);
 void tapBoard(vector<Crawler*> &crawlers);
-void displayCells(vector<Crawler*> &crawlers,array<array<vector<Crawler*>, 10>, 10> &board);
+void displayCells(array<array<vector<Crawler*>, 10>, 10> &board);
 
 //Set up crawlers - assign values from the file to variables
 void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
@@ -39,6 +39,7 @@ void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
         created_crawler->setDirection(stoi(temp)); // convert string to int
         getline(ss, temp, ','); // size
         created_crawler->setSize(stoi(temp)); // convert string to int
+        board[created_crawler->pos.x][created_crawler->pos.y].push_back(created_crawler); //adds crawler positions to the board cells
 
         crawlers.push_back(created_crawler); // Add to vector
     }
@@ -97,19 +98,19 @@ void tapBoard(vector<Crawler*> &crawlers)
 
         cout<<endl;
     }
-
 }
 
-void displayCells(vector<Crawler*> &crawlers,array<array<vector<Crawler*>, 10>, 10> &board)
+//
+void displayCells(array<array<vector<Crawler*>, 10>, 10> &board)
 {
     for ( auto row = 0; row < 10; row++)
     {
         for ( auto col = 0; col < 10; col++)
         {
-            for ( auto crawlers : board[row][col] ) {
-                crawlers->getId();
-            }
-
+            cout<<"[";
+            cout<<board[row][col].size();
+            cout<<"]";
         }
+        cout<<endl;
     }
 }

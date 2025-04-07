@@ -66,8 +66,19 @@ int main() {
                 tapBoard(crawlers);
             break;
 
+            //If user wants to look at the history of the bugs
+            case 4:
+                //getPathHistory(crawlers);
+                break;
+
+            //If user wants to look at the cells
+            case 5:
+                setUpCrawlers(ifs, crawlers);//sets up crawlers so they can be displayed
+                displayCells(board);
+            break;
+            
             //If user wants to exit or finish the game
-            case 8:
+            case 7:
                 cout << "Bye bye" << endl;
             return 0;
             default:

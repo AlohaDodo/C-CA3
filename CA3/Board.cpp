@@ -95,6 +95,7 @@ void tapBoard(vector<Crawler*> &crawlers)
         cout <<"crawler size: " << crawler->getSize() << endl;
         cout <<"crawler is facing: " << crawler->getDirection() << endl;
         cout <<"crawler is alive: " << crawler->getAlive() << endl;
+        board[crawler->pos.x][crawler->pos.y].push_back(crawler);
 
         cout<<endl;
     }

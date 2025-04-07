@@ -1,4 +1,5 @@
 #include "Crawler.h"
+#include <iostream>
 #include <vector>
 #include <sstream>
 
@@ -44,35 +45,37 @@ void Crawler::move()
 
   if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction.
   {
-    int n = rand()%3;
+    cout<<"wayBlockedOhNO";
+    int n = rand()%4 + 1;
 
     //Adding the position to the history before moving off
     //addPathToHistory();
 
-    if (n==0)
+    if (n==1)
     {
       dir = north;
     }
 
-    else if (n==1)
+    else if (n==2)
     {
       dir = east;
     }
 
-    else if (n==2)
+    else if (n==3)
     {
       dir = south;
     }
 
-    else
+    else if (n==4)
     {
       dir = west;
     }
-
     move();
   }
 
-  else
+   else if (!blocked)
+  {
+    cout<<"wayNotBlockedYopee";
     if(dir==north)
     {
       pos.y+=1;
@@ -83,16 +86,16 @@ void Crawler::move()
       pos.x+=1;
     }
 
-    else if(dir==west)
-    {
-      pos.x-=1;
-    }
-
-    else
+    else if(dir==south)
     {
       pos.y-=1;
     }
 
+    else if (dir==west)
+    {
+      pos.x-=1;
+    }
+  }
 
 
 }//end of move(), in crawler
@@ -102,11 +105,11 @@ void Crawler::move()
 //haven't tested yet, so might not even work
 bool Crawler::wayIsBlocked()
 {
-  bool isblocked=false; //should stay and return false if no blocks
+  bool isblocked=false;
 
   if(dir==north && pos.y>=9)
   {
-    isblocked=true;
+    isblocked = true;
   }
 
   else if(dir==east && pos.x>=9)
@@ -114,12 +117,12 @@ bool Crawler::wayIsBlocked()
     isblocked=true;
   }
 
-  else if(dir==west && pos.x<=0)
+  else if(dir==south && pos.y<=0)
   {
     isblocked=true;
   }
 
-  else if(dir==south && pos.y<=0)
+  else if(dir==west && pos.x<=0)
   {
     isblocked=true;
   }

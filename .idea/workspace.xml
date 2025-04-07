@@ -21,6 +21,9 @@
     <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="updated move() function to set a random direction if it's blocked">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CA3/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Crawler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +70,7 @@
   "keyToString": {
     "C/C++ File.Board.cpp (1).executor": "Run",
     "C/C++ File.Board.cpp.executor": "Run",
-    "C/C++ File.Main.cpp.executor": "Debug",
+    "C/C++ File.Main.cpp.executor": "Run",
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -75,7 +78,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Ciaran",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -104,7 +107,7 @@
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$USER_HOME$/Documents/GitHub/C-CA3/CA3" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C-CA3" TARGET_NAME="Main.cpp" CONFIG_NAME="Main.cpp">
+    <configuration name="Main.cpp" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$/CA3" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C-CA3" TARGET_NAME="Main.cpp" CONFIG_NAME="Main.cpp">
       <option name="sourceFile" value="CA3\Main.cpp" />
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
@@ -137,6 +140,7 @@
       <workItem from="1743703469429" duration="2378000" />
       <workItem from="1743706907377" duration="63000" />
       <workItem from="1743712907408" duration="117000" />
+      <workItem from="1744057524172" duration="2075000" />
     </task>
     <task id="LOCAL-00001" summary="added basic move() function, no check for way blocked">
       <option name="closed" value="true" />

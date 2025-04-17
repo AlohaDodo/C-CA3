@@ -10,10 +10,10 @@ struct Position
 
 //Enum for direction
 enum Direction{
-    north,
-    east,
-    south,
-    west
+    north=1,
+    east=2,
+    south=3,
+    west=4
   };
 
 //Class representing a bug/Crawler

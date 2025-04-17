@@ -61,7 +61,7 @@ void Crawler::move()
       dir = south;
     }
 
-    else
+    else if (n==3)
     {
       dir = west;
     }
@@ -70,6 +70,7 @@ void Crawler::move()
   }
 
   else
+    {
     if(dir==north)
     {
       pos.y+=1;
@@ -89,7 +90,7 @@ void Crawler::move()
     {
       pos.y-=1;
     }
-
+  }
 
 
 }//end of move(), in crawler

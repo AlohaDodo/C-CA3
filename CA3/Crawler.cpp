@@ -1,5 +1,4 @@
 #include "Crawler.h"
-#include <iostream>
 #include <vector>
 #include <sstream>
 
@@ -19,11 +18,11 @@ bool Crawler::getAlive() {
 }
 
 void Crawler::setId(int id) {
-  this->id = id;
+ 	 this->id = id;
 }
 
 void Crawler::setSize(int size) {
-  this->size = size;
+	 this->size = size;
 }
 
 int Crawler::getDirection() {
@@ -31,7 +30,7 @@ int Crawler::getDirection() {
 }
 
 void Crawler::setDirection(int dir) {
-  this->dir = static_cast<Direction>(dir);
+	 this->dir = static_cast<Direction>(dir);
 }
 
 Crawler::Crawler() {
@@ -45,37 +44,32 @@ void Crawler::move()
 
   if (blocked) //sets a random direction value if it's blocked and then runs the function again to test the new direction.
   {
-    cout<<"wayBlockedOhNO";
-    int n = rand()%4 + 1;
+    int n = rand()%3;
 
-    //Adding the position to the history before moving off
-    //addPathToHistory();
-
-    if (n==1)
+    if (n==0)
     {
       dir = north;
     }
 
-    else if (n==2)
+    else if (n==1)
     {
       dir = east;
     }
 
-    else if (n==3)
+    else if (n==2)
     {
       dir = south;
     }
 
-    else if (n==4)
+    else
     {
       dir = west;
     }
+
     move();
   }
 
-   else if (!blocked)
-  {
-    cout<<"wayNotBlockedYopee";
+  else
     if(dir==north)
     {
       pos.y+=1;
@@ -86,16 +80,16 @@ void Crawler::move()
       pos.x+=1;
     }
 
-    else if(dir==south)
+    else if(dir==west)
+    {
+      pos.x-=1;
+    }
+
+    else
     {
       pos.y-=1;
     }
 
-    else if (dir==west)
-    {
-      pos.x-=1;
-    }
-  }
 
 
 }//end of move(), in crawler
@@ -105,27 +99,27 @@ void Crawler::move()
 //haven't tested yet, so might not even work
 bool Crawler::wayIsBlocked()
 {
-  bool isblocked=false;
+  bool isblocked=false; //should stay and return false if no blocks
 
   if(dir==north && pos.y>=9)
-  {
-    isblocked = true;
-  }
+    {
+      isblocked=true;
+    }
 
   else if(dir==east && pos.x>=9)
-  {
-    isblocked=true;
-  }
-
-  else if(dir==south && pos.y<=0)
-  {
-    isblocked=true;
-  }
+    {
+      isblocked=true;
+    }
 
   else if(dir==west && pos.x<=0)
-  {
-    isblocked=true;
-  }
+    {
+      isblocked=true;
+    }
+
+  else if(dir==south && pos.y<=0)
+    {
+      isblocked=true;
+    }
 
   return isblocked;
 }//end of wayIsBlocked(), in crawler

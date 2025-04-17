@@ -19,6 +19,7 @@ void displayOneCrawler(vector<Crawler*> &crawlers);
 Crawler* findBugById(vector<Crawler*> &crawlers, string bugId);
 void tapBoard(vector<Crawler*> &crawlers);
 void displayCells(array<array<vector<Crawler*>, 10>, 10> &board);
+void clearBoard(array<array<vector<Crawler*>, 10>, 10>& board);
 
 //Set up crawlers - assign values from the file to variables
 void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
@@ -44,8 +45,6 @@ void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
         crawlers.push_back(created_crawler); // Add to vector
     }
 }
-
-ostream operator<<(const ostream & lhs, int(* rhs)());
 
 //Q2 - Making a method to display all bugs
 void displayCrawlers(vector<Crawler*> &crawlers)
@@ -84,6 +83,8 @@ void displayOneCrawler(Crawler* &crawler) {
 //Q4 - Tap the board method
 void tapBoard(vector<Crawler*> &crawlers)
 {
+    clearBoard(board);//clears the board before moving the crawlers, otherwise it also shows the crawler in their last positions
+
     for (auto iter = begin(crawlers); iter != end(crawlers); iter++)
     {
         Crawler* crawler = *iter;
@@ -95,13 +96,15 @@ void tapBoard(vector<Crawler*> &crawlers)
         cout <<"crawler size: " << crawler->getSize() << endl;
         cout <<"crawler is facing: " << crawler->getDirection() << endl;
         cout <<"crawler is alive: " << crawler->getAlive() << endl;
+
+
         board[crawler->pos.x][crawler->pos.y].push_back(crawler);
 
         cout<<endl;
     }
 }
 
-//
+//Q2 - Making a method to display the board
 void displayCells(array<array<vector<Crawler*>, 10>, 10> &board)
 {
     for ( auto row = 0; row < 10; row++)
@@ -113,5 +116,17 @@ void displayCells(array<array<vector<Crawler*>, 10>, 10> &board)
             cout<<"]";
         }
         cout<<endl;
+    }
+}
+
+//removes everything from the board
+void clearBoard(array<array<vector<Crawler*>, 10>, 10>& board)
+{
+    for (int row = 0; row < 10; row++)
+    {
+        for (int col = 0; col < 10; col++)
+        {
+            board[row][col].clear();
+        }
     }
 }

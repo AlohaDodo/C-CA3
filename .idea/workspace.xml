@@ -21,8 +21,7 @@
     <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="created function to clear the board and it gets called before each movement of the crawler">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CA3/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Board.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CA3/Crawler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CA3/Crawler.h" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +32,19 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>

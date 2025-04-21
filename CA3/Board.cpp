@@ -60,12 +60,11 @@ void displayCrawlers(vector<Crawler*> &crawlers)
     {
         Crawler* crawler = *iter;
 
-        cout << "crawler ID: " << crawler->getId() << endl;
-        cout <<"crawler position x: " << crawler->pos.x << endl;
-        cout <<"crawler position y: " << crawler->pos.y << endl;
-        cout <<"crawler size: " << crawler->getSize() << endl;
-        cout <<"crawler is facing: " << crawler->getDirection() << endl;
-        cout <<"crawler is alive: " << crawler->getAlive() << endl;
+        cout << "crawler ID: " << crawler->getId();
+        cout <<", position: (" << crawler->pos.x <<"," <<crawler->pos.y << ")";
+        cout <<", size: " << crawler->getSize();
+        cout <<", facing: " << crawler->getDirection();
+        cout <<", alive: " << crawler->getAlive();
         cout<<endl;
 
         board[crawler->pos.x][crawler->pos.y].push_back(crawler); //adds crawler positions to the board cells
@@ -99,12 +98,12 @@ void tapBoard(vector<Crawler*> &crawlers)
         if (crawler->getAlive() == true)
         {
             crawler->move();
-            cout <<"crawler ID: " << crawler->getId() << endl;
-            cout <<"new crawler position x: " << crawler->pos.x << endl;
-            cout <<"new crawler position y: " << crawler->pos.y << endl;
-            cout <<"crawler size: " << crawler->getSize() << endl;
-            cout <<"crawler is facing: " << crawler->getDirection() << endl;
-            cout <<"crawler is alive: " << crawler->getAlive() << endl;
+            cout << "crawler ID: " << crawler->getId();
+            cout <<", position: (" << crawler->pos.x <<"," <<crawler->pos.y << ")";
+            cout <<", size: " << crawler->getSize();
+            cout <<", facing: " << crawler->getDirection();
+            cout <<", alive: " << crawler->getAlive();
+            cout<<endl;
 
             board[crawler->pos.x][crawler->pos.y].push_back(crawler);
             displayCells(board);

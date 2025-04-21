@@ -130,3 +130,41 @@ bool Crawler::wayIsBlocked()
 
   return isblocked;
 }//end of wayIsBlocked(), in crawler
+
+string Crawler::aliveToString()
+{
+  getAlive();
+
+  string aliveString;
+  if (alive == true)
+  {
+    aliveString = "true";
+  }
+
+  else aliveString = "false";
+  return aliveString;
+}
+
+string Crawler::directionToString() {
+
+  getDirection();
+
+  string dirString;
+  if (dir == north)
+  {
+    dirString = "north";
+  }
+
+  else if (dir == east)
+  {
+    dirString = "east";
+  }
+
+  else if (dir == south)
+  {
+    dirString = "south";
+  }
+
+  else dirString = "west";
+  return dirString;
+}

@@ -37,6 +37,9 @@ public:
     Crawler();
     void move();
     bool wayIsBlocked();
+    string aliveToString();
+    string directionToString();
+
     int getId();
     int getSize();
     Direction getDirection();

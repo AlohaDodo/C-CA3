@@ -63,8 +63,8 @@ void displayCrawlers(vector<Crawler*> &crawlers)
         cout << "crawler ID: " << crawler->getId();
         cout <<", position: (" << crawler->pos.x <<"," <<crawler->pos.y << ")";
         cout <<", size: " << crawler->getSize();
-        cout <<", facing: " << crawler->getDirection();
-        cout <<", alive: " << crawler->getAlive();
+        cout <<", facing: " << crawler->directionToString();
+        cout <<", alive: " << crawler->aliveToString();
         cout<<endl;
 
         board[crawler->pos.x][crawler->pos.y].push_back(crawler); //adds crawler positions to the board cells
@@ -97,12 +97,13 @@ void tapBoard(vector<Crawler*> &crawlers)
 
         if (crawler->getAlive() == true)
         {
+            board[crawler->pos.x][crawler->pos.y].clear(); //removes only the 1 crawler from its position before it moves, dk why i was clearing the whole board before
             crawler->move();
             cout << "crawler ID: " << crawler->getId();
             cout <<", position: (" << crawler->pos.x <<"," <<crawler->pos.y << ")";
             cout <<", size: " << crawler->getSize();
-            cout <<", facing: " << crawler->getDirection();
-            cout <<", alive: " << crawler->getAlive();
+            cout <<", facing: " << crawler->directionToString();
+            cout <<", alive: " << crawler->aliveToString();
             cout<<endl;
 
             board[crawler->pos.x][crawler->pos.y].push_back(crawler);
@@ -115,8 +116,11 @@ void tapBoard(vector<Crawler*> &crawlers)
                 Crawler* crawler1 = board[crawler->pos.x][crawler->pos.y][0];
                 Crawler* crawler2 = board[crawler->pos.x][crawler->pos.y][1];
 
-                cout<<"Fighting crawlers..."<<endl;
-                fight(crawler1,crawler2);
+                if (crawler1->getAlive()==true && crawler2->getAlive()==true)
+                {
+                    cout<<"Fighting crawlers..."<<endl;
+                    fight(crawler1,crawler2);
+                }
             }
         }
 
@@ -160,13 +164,19 @@ void fight(Crawler* crawler1, Crawler* crawler2)
 
     if (crawler1->getSize() > crawler2->getSize()) //if crawler1 bigger than crawler2
         {
-            crawler2->setAlive(false);
+            crawler2->setAlive(false); //kills crawler 2
+
+            //eats the other crawler and gets bigger
+            crawler1->setSize(crawler1->getSize()+crawler2->getSize());
             cout<<"Crawler "<<crawler1->getId()<<" wins"<<endl;
         }
 
     else if (crawler2->getSize() > crawler1->getSize()) //if crawler 2 bigger than crawler 2
         {
-            crawler1->setAlive(false);
+            crawler1->setAlive(false); //kills crawler 1
+
+            //eats the other crawler and gets bigger
+            crawler2->setSize(crawler2->getSize()+crawler1->getSize());
             cout<<"Crawler "<<crawler2->getId()<<" wins"<<endl;
         }
 
@@ -176,13 +186,17 @@ void fight(Crawler* crawler1, Crawler* crawler2)
 
         if (n==0)
         {
-            crawler1->setAlive(false);
+            crawler1->setAlive(false); //kills crawler 1
+
+            crawler2->setSize(crawler2->getSize()+crawler1->getSize());
             cout<<"Crawler "<<crawler2->getId()<<" wins"<<endl;
         }
 
         else if (n==1)
         {
-            crawler2->setAlive(false);
+            crawler2->setAlive(false); //kills crawler 2
+
+            crawler1->setSize(crawler1->getSize()+crawler2->getSize());
             cout<<"Crawler "<<crawler1->getId()<<" wins"<<endl;
         }
     }

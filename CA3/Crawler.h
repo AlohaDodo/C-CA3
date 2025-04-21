@@ -30,7 +30,7 @@ private:
     int id;
     Direction dir;
     int size;
-    bool alive;
+    bool alive = true;
     list<Position> path;
 
 public:
@@ -39,11 +39,14 @@ public:
     bool wayIsBlocked();
     int getId();
     int getSize();
-    int getDirection();
+    Direction getDirection();
     bool getAlive();
     void setId(int id);
     void setSize(int size);
-    void setDirection(int dir);
+    void setDirection(Direction dir);
+    void setAlive(bool alive);
+
+
     //void addPathToHistory();
     //const list<Position> getPathHistory();
     Position pos;

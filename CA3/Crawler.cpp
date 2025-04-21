@@ -14,6 +14,7 @@ int Crawler::getSize() {
 }
 
 bool Crawler::getAlive() {
+
   return alive;
 }
 
@@ -25,16 +26,22 @@ void Crawler::setSize(int size) {
 	 this->size = size;
 }
 
-int Crawler::getDirection() {
+
+Direction Crawler::getDirection() {
   return dir;
 }
 
-void Crawler::setDirection(int dir) {
-	 this->dir = static_cast<Direction>(dir);
+void Crawler::setDirection(Direction dir) {
+	 this->dir = dir;
+}
+
+void Crawler::setAlive(bool alive) {
+  this->alive = alive;
 }
 
 Crawler::Crawler() {
 }
+
 
 
 //moves Crawler 1 space in the direction it's facing

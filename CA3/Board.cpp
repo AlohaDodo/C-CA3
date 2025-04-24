@@ -19,6 +19,8 @@ void tapBoard(vector<Crawler*> &crawlers);
 void displayCells(array<array<vector<Crawler*>, 10>, 10> &board);
 void clearBoard(array<array<vector<Crawler*>, 10>, 10>& board);
 void fight (Crawler* c1,Crawler* c2);
+void displayLifeHistoryOfBugs(vector<string> &lifeHistory);
+
 
 //Set up crawlers - assign values from the file to variables
 void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
@@ -47,7 +49,11 @@ void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
 
         board[created_crawler->pos.x][created_crawler->pos.y].push_back(created_crawler); //adds crawler positions to the board cells
 
-        crawlers.push_back(created_crawler); // Add to vector
+        // Add to crawlers vector
+        crawlers.push_back(created_crawler);
+
+        //Q5 - Life history of bugs - Logging the crawlers starting positions
+        created_crawler->addToLifeHistory("Started at : " + to_string(created_crawler->pos.x) + "," + to_string(created_crawler->pos.y));
     }
 }
 
@@ -94,7 +100,7 @@ Crawler *findBugById(vector<Crawler *> &crawlers, int bugId) {
     return nullptr;
 }
 
-//Making a method to display one bug
+//Making a method to display one bug apart of Q3
 void displayOneCrawler(Crawler* &crawler) {
     cout << "crawler ID: " << crawler->getId();
     cout << ", position :(" << crawler->pos.x <<"," <<crawler->pos.y << ")";
@@ -146,10 +152,11 @@ void tapBoard(vector<Crawler*> &crawlers)
             cout<<"Crawler "<<crawler->getId()<<" is dead"<<endl;
 
         cout<<endl;
+
+        //Q5 - Display life history of bugs - Logging in every tap's positions
+        crawler->addToLifeHistory("Crawler moved to: " +to_string(crawler->pos.x) + "," + to_string(crawler->pos.y));
     }
 }
-
-
 
 //removes everything from the board
 void clearBoard(array<array<vector<Crawler*>, 10>, 10>& board)
@@ -163,6 +170,7 @@ void clearBoard(array<array<vector<Crawler*>, 10>, 10>& board)
     }
 }
 
+//part of Q4 - fight functionality
 void fight(Crawler* crawler1, Crawler* crawler2)
 {
     cout<<crawler1->getId()<<" and "<<crawler2->getId()<<" fighting..."<<endl;
@@ -205,4 +213,39 @@ void fight(Crawler* crawler1, Crawler* crawler2)
             cout<<"Crawler "<<crawler1->getId()<<" wins"<<endl;
         }
     }
+    //Q5 - Display life history of bugs - logging in any fights into life history
+    //NOT TESTED YET
+    crawler1->addToLifeHistory("Fight with : " +to_string(crawler2->getId()));
+    crawler2->addToLifeHistory("Fight with : " +to_string(crawler1->getId()));
+
+    //Q5 - Display life history of bugs - logging in alive status - dead or alive - using IF loop cus alive is a bool (insert chocking emote)
+    //NOT TESTED YET
+    if (crawler1->getAlive()==false) {
+        crawler1->addToLifeHistory("Died in battle");
+    }
+
+    if (crawler2->getAlive()==false) {
+        crawler2->addToLifeHistory("Died in battle");
+    }
 }
+
+//Q5 - Display life history of bugs
+void displayLifeHistoryOfBugs(vector<Crawler*> &crawlers) {
+    //Going through loop
+    for (auto& crawler : crawlers) {
+        cout << "History of Crawler ID " << crawler->getId() << ":" << endl;
+        //making a seperate vector for one crawler to display neatly
+        vector<string> log = crawler->getLifeHistory();
+
+        // If there is no history, print a message
+        if (log.empty()) {
+            cout << "  No life history logged :(" << endl;
+        } else {
+            for (const auto& log : log) {
+                cout << log << endl;
+            }
+        }
+        cout << endl;
+    }
+}
+

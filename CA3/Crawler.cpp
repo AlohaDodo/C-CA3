@@ -42,8 +42,6 @@ void Crawler::setAlive(bool alive) {
 Crawler::Crawler() {
 }
 
-
-
 //moves Crawler 1 space in the direction it's facing
 void Crawler::move()
 {
@@ -97,10 +95,7 @@ void Crawler::move()
       pos.y-=1;
     }
 
-
-
 }//end of move(), in crawler
-
 
 //since the grid is 10x10 0-9 it should hopefully check the direction, and if its on the edge (0 or 9) its blocked
 //haven't tested yet, so might not even work
@@ -168,3 +163,15 @@ string Crawler::directionToString() {
   else dirString = "west";
   return dirString;
 }
+
+//Q5 - Logging in crawlers life history
+void Crawler::addToLifeHistory(const string &line) {
+  //pushing the line into the vector
+    lifeHistory.push_back(line);
+}
+
+//Displaying the life history by returning the vector
+vector<string> Crawler::getLifeHistory() const {
+  return lifeHistory;
+}
+

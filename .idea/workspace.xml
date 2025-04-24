@@ -18,11 +18,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="created function to clear the board and it gets called before each movement of the crawler">
+    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="Fixed feature 3 Find a bug by ID - prints out the whole bugs info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CA3/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Board.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Crawler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/Crawler.h" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CA3/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CA3/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +198,7 @@
       <workItem from="1745241984602" duration="6191000" />
       <workItem from="1745519666797" duration="25000" />
       <workItem from="1745519703992" duration="45000" />
-      <workItem from="1745519749836" duration="1689000" />
+      <workItem from="1745519749836" duration="7364000" />
     </task>
     <task id="LOCAL-00001" summary="added basic move() function, no check for way blocked">
       <option name="closed" value="true" />
@@ -263,7 +264,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745249694095</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fixed feature 3 Find a bug by ID - prints out the whole bugs info">
+      <option name="closed" value="true" />
+      <created>1745521494892</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1745521494892</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +288,7 @@
     <MESSAGE value="set values for the enum in Crawler.h cause for some reason move doesnt work properly without it" />
     <MESSAGE value="created function to clear the board and it gets called before each movement of the crawler" />
     <MESSAGE value="made the crawlers display a bit nicer" />
-    <option name="LAST_COMMIT_MESSAGE" value="made the crawlers display a bit nicer" />
+    <MESSAGE value="Fixed feature 3 Find a bug by ID - prints out the whole bugs info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed feature 3 Find a bug by ID - prints out the whole bugs info" />
   </component>
 </project>

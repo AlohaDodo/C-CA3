@@ -1,7 +1,7 @@
 #ifndef CRAWLER_H
 #define CRAWLER_H
-#include <list>
 #include <string>
+#include <vector>
 using namespace std;
 
 //Struct for position
@@ -31,7 +31,7 @@ private:
     Direction dir;
     int size;
     bool alive = true;
-    list<Position> path;
+    vector<string> lifeHistory;
 
 public:
     Crawler();
@@ -49,10 +49,11 @@ public:
     void setDirection(Direction dir);
     void setAlive(bool alive);
 
+    void addToLifeHistory(const string& line);
+    vector<string> getLifeHistory() const;
 
-    //void addPathToHistory();
-    //const list<Position> getPathHistory();
     Position pos;
+
 //void move();
 //void wayIsBlocked();
 

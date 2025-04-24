@@ -6,6 +6,7 @@
 int main() {
     vector<Crawler*> crawlers;
 
+
     //Feature 1 - Initialise bug board
     ifstream ifs("crawler-bugs.txt");
 
@@ -68,8 +69,8 @@ int main() {
 
             //If user wants to look at the history of the bugs
             case 4:
-                //getPathHistory(crawlers);
-                break;
+                displayLifeHistoryOfBugs(crawlers);
+            break;
 
             //If user wants to look at the cells
             case 5:

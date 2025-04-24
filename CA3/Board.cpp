@@ -1,7 +1,5 @@
 #include "Board.h"
-
 #include <array>
-
 #include "Crawler.h"
 #include <vector>
 #include <fstream>
@@ -71,6 +69,21 @@ void displayCrawlers(vector<Crawler*> &crawlers)
     }
 }
 
+//Q2 - Making a method to display the board
+void displayCells(array<array<vector<Crawler*>, 10>, 10>& board)
+{
+    for ( auto row = 0; row < 10; row++)
+    {
+        for ( auto col = 0; col < 10; col++)
+        {
+            cout<<"[";
+            cout<<board[row][col].size();
+            cout<<"]";
+        }
+        cout<<endl;
+    }
+}
+
 //Q3 - Method find bug by ID
 Crawler *findBugById(vector<Crawler *> &crawlers, int bugId) {
     for (int i = 0; i<crawlers.size(); i++) {
@@ -83,7 +96,12 @@ Crawler *findBugById(vector<Crawler *> &crawlers, int bugId) {
 
 //Making a method to display one bug
 void displayOneCrawler(Crawler* &crawler) {
-    cout << "crawler ID: " << crawler->getId() << endl;
+    cout << "crawler ID: " << crawler->getId();
+    cout << ", position :(" << crawler->pos.x <<"," <<crawler->pos.y << ")";
+    cout << ", size: " << crawler->getSize();
+    cout << ", facing: " << crawler->directionToString();
+    cout << ", alive: " << crawler->aliveToString();
+    cout << endl;
 }
 
 //Q4 - Tap the board method
@@ -131,20 +149,7 @@ void tapBoard(vector<Crawler*> &crawlers)
     }
 }
 
-//Q2 - Making a method to display the board
-void displayCells(array<array<vector<Crawler*>, 10>, 10>& board)
-{
-    for ( auto row = 0; row < 10; row++)
-    {
-        for ( auto col = 0; col < 10; col++)
-        {
-            cout<<"[";
-            cout<<board[row][col].size();
-            cout<<"]";
-        }
-        cout<<endl;
-    }
-}
+
 
 //removes everything from the board
 void clearBoard(array<array<vector<Crawler*>, 10>, 10>& board)

@@ -36,14 +36,14 @@ int main() {
         cin >> option;
 
         switch (option) {
-            //If user picks to display all Crawlers
+            //If user picks to display all Crawlers- shows all bugs details
             case 1:
                 displayCrawlers(crawlers);
             break;
 
             //If user picks to find bug by ID - example 101
             case 2:
-                //User entering in an id they want to filter out with
+                //User entering an id they want to filter out with
                 cout << "Enter bug id: ";
                 int bugId;
                 cin >> bugId;
@@ -61,7 +61,7 @@ int main() {
             }
             break;
 
-            //If user wants to tap the board.
+            //If user wants to tap the board - bugs move one cell in a random direction.
             case 3:
                 tapBoard(crawlers);
             break;
@@ -81,6 +81,7 @@ int main() {
             case 7:
                 cout << "Bye bye" << endl;
             return 0;
+
             default:
                 cout << "Invalid option. Try again.\n";
             break;

@@ -1,0 +1,15 @@
+History of Crawler 101:
+  - Started at : 0,0
+  - Crawler moved to: 1,0
+  - Crawler moved to: 2,0
+
+History of Crawler 102:
+  - Started at : 9,0
+  - Crawler moved to: 9,1
+  - Crawler moved to: 9,2
+
+History of Crawler 103:
+  - Started at : 9,9
+  - Crawler moved to: 9,8
+  - Crawler moved to: 9,7
+

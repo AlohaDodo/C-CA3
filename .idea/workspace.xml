@@ -18,12 +18,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="Fixed feature 3 Find a bug by ID - prints out the whole bugs info">
+    <list default="true" id="a8200419-71ed-4638-9c4f-3e9b862e18e6" name="Changes" comment="Feature 5 - Display life history of bugs (tears were shed)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CA3/Board.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Board.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CA3/Crawler.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CA3/Crawler.h" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Crawler.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CA3/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/Main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CA3/main.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CA3/main.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,12 +60,12 @@
     &quot;assignee&quot;: &quot;CiaranMcKeown123&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AlohaDodo/C-CA3.git",
-    "accountId": "3981b1cb-5288-4140-b157-bb7a18fa5cac"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AlohaDodo/C-CA3.git&quot;,
+    &quot;accountId&quot;: &quot;3981b1cb-5288-4140-b157-bb7a18fa5cac&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
@@ -198,7 +197,8 @@
       <workItem from="1745241984602" duration="6191000" />
       <workItem from="1745519666797" duration="25000" />
       <workItem from="1745519703992" duration="45000" />
-      <workItem from="1745519749836" duration="7364000" />
+      <workItem from="1745519749836" duration="9660000" />
+      <workItem from="1745575353459" duration="1288000" />
     </task>
     <task id="LOCAL-00001" summary="added basic move() function, no check for way blocked">
       <option name="closed" value="true" />
@@ -272,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745521494892</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Feature 5 - Display life history of bugs (tears were shed)">
+      <option name="closed" value="true" />
+      <created>1745527247086</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1745527247086</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +297,7 @@
     <MESSAGE value="created function to clear the board and it gets called before each movement of the crawler" />
     <MESSAGE value="made the crawlers display a bit nicer" />
     <MESSAGE value="Fixed feature 3 Find a bug by ID - prints out the whole bugs info" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed feature 3 Find a bug by ID - prints out the whole bugs info" />
+    <MESSAGE value="Feature 5 - Display life history of bugs (tears were shed)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feature 5 - Display life history of bugs (tears were shed)" />
   </component>
 </project>

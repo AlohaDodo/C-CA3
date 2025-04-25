@@ -20,7 +20,7 @@ void displayCells(array<array<vector<Crawler*>, 10>, 10> &board);
 void clearBoard(array<array<vector<Crawler*>, 10>, 10>& board);
 void fight (Crawler* c1,Crawler* c2);
 void displayLifeHistoryOfBugs(vector<string> &lifeHistory);
-
+void outputLifeHistory(vector<Crawler*> &crawlers, const string& filename);
 
 //Set up crawlers - assign values from the file to variables
 void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
@@ -247,5 +247,42 @@ void displayLifeHistoryOfBugs(vector<Crawler*> &crawlers) {
         }
         cout << endl;
     }
+}
+
+//Q6 - Output life history into a file
+void outputLifeHistory(vector<Crawler*> &crawlers, const string& filename) {
+    //creating file
+    ofstream outputLifeHistory(filename);
+
+    //open the file - if it's not opening then return error
+    if (!outputLifeHistory.is_open()) {
+        cout << "Cannot open outputLifeHistory. :(" << endl;
+        return;
+    }
+
+    //if file is open it goes through each crawler
+    for (auto& crawler : crawlers) {
+        outputLifeHistory << "History of Crawler " << crawler->getId() << ":" << endl;
+        vector<string> log = crawler->getLifeHistory();
+
+        //goes through the log vector and checks if it's empty or not
+        if (log.empty()) {
+            cout << "  No life history logged :(" << endl;
+        }
+        //if the vector isn't empty it goes through every line and writes it in the file
+        else {
+            for (const auto& entry : log) {
+                outputLifeHistory << "  - " << entry << endl;
+            }
+        }
+        //finishing off the file with an empty line
+        outputLifeHistory << endl;
+    }
+
+    //closing file
+    outputLifeHistory.close();
+
+    //success message
+    cout << "done, saved to : " << filename << "." << endl;
 }
 

@@ -80,9 +80,23 @@ int main() {
             
             //If user wants to exit or finish the game
             case 7:
-                cout << "Bye bye" << endl;
+                cout << "Would you like to write life history into a file? (1 = yes - 2 = no)" << endl;
+
+            int choice;
+            cin >> choice;
+
+            //If user wants to save life history into file
+            if (choice == 1) {
+                outputLifeHistory(crawlers,"Life_History_Of_Bugs.txt");
+            }
+
+            //if not it just breaks the code
+            if (choice == 2) {
+                cout << "ok bye bye" << endl;
+            }
             return 0;
 
+            //if user inputs anything else than a menu option number
             default:
                 cout << "Invalid option. Try again.\n";
             break;

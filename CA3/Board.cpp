@@ -1,4 +1,6 @@
 #include "Board.h"
+
+#include <algorithm>
 #include <array>
 #include "Crawler.h"
 #include <vector>
@@ -21,6 +23,7 @@ void clearBoard(array<array<vector<Crawler*>, 10>, 10>& board);
 void fight (Crawler* c1,Crawler* c2);
 void displayLifeHistoryOfBugs(vector<string> &lifeHistory);
 void outputLifeHistory(vector<Crawler*> &crawlers, const string& filename);
+void runSimulation(vector<Crawler*> &crawlers);
 
 //Set up crawlers - assign values from the file to variables
 void setUpCrawlers(ifstream &ifs, vector<Crawler*> &crawlers) {
@@ -121,6 +124,7 @@ void tapBoard(vector<Crawler*> &crawlers)
 
         if (crawler->getAlive() == true)
         {
+
             board[crawler->pos.x][crawler->pos.y].clear(); //removes only the 1 crawler from its position before it moves, dk why i was clearing the whole board before
             crawler->move();
             cout << "crawler ID: " << crawler->getId();
@@ -148,14 +152,16 @@ void tapBoard(vector<Crawler*> &crawlers)
             }
         }
 
-        else
-            cout<<"Crawler "<<crawler->getId()<<" is dead"<<endl;
-
         cout<<endl;
 
         //Q5 - Display life history of bugs - Logging in every tap's positions
         crawler->addToLifeHistory("Crawler moved to: " +to_string(crawler->pos.x) + "," + to_string(crawler->pos.y));
     }
+
+    crawlers.erase(remove_if(crawlers.begin(), crawlers.end(),
+    [](Crawler* crawler) { return !crawler->getAlive(); }),
+    crawlers.end());
+
 }
 
 //removes everything from the board
@@ -286,3 +292,15 @@ void outputLifeHistory(vector<Crawler*> &crawlers, const string& filename) {
     cout << "done, saved to : " << filename << "." << endl;
 }
 
+//Q7 - Runs the simulation
+void runSimulation(vector<Crawler*> &crawlers) {
+
+    //while theres more than one bug alive, it should keep tapping
+    while(crawlers.size() > 1)
+    {
+        tapBoard(crawlers);
+    }
+
+    cout<<"Simulation finished"<<endl;
+    cout<<"The last crawler left is: "<<crawlers[0]->getId()<<endl;
+}

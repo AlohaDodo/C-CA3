@@ -77,6 +77,10 @@ int main() {
                 setUpCrawlers(ifs, crawlers);//sets up crawlers so they can be displayed
                 displayCells(board);
             break;
+
+            case 6:
+                cout<< "Running simulation..."<<endl;
+                runSimulation(crawlers);
             
             //If user wants to exit or finish the game
             case 7:
